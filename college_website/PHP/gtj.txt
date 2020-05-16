@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>JBIC</title>
+
+<link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
+<script type="text/javascript" src="layout/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="layout/scripts/jquery.slidepanel.setup.js"></script>
+<!-- Homepage Only Scripts -->
+<script type="text/javascript" src="layout/scripts/jquery.cycle.min.js"></script>
+<style>
+#postit{
+position:absolute;
+width:276px;
+padding:5px;
+background-color:lightyellow;
+border:1px solid black;
+visibility:hidden;
+z-index:100;
+cursor:hand;
+cursor: pointer;
+}
+.style8 {color: #666666}
+.style9 {
+	font-size: 14px;
+	font-weight: bold;
+}
+.style12 {
+	color: #FFFF99;
+	font-weight: bold;
+	font-size: 14px;
+}
+body,td,th {
+	font-size: 14px;
+}
+body {
+	background-color: #F8F7DF;
+}
+.style18 {font-size: 12px}
+.style23 {color: #C4C5C3}
+.style25 {font-family: Georgia, "Times New Roman", Times, serif}
+.style28 {color: #333333; font-family: Georgia, "Times New Roman", Times, serif; }
+.style29 {font-family: Georgia, "Times New Roman", Times, serif; color: #666666; }
+.style31 {font-size: 14px}
+.style32 {color: #990000}
+
+-->
+</style>
+<div id="postit" style="left:940px;top:40px">
+<div align="right"><b><a href="javascript:closeit()">[ X ]</a></b></div>
+
+<!--INSERT YOUR CONTENT HERE-->
+<b><font color=#000066 size=2>Dear Students,Wish you all the best.</font></b></br><hr>
+</div>
+
+<script>
+
+//Post-it only once per browser session? (0=no, 1=yes)
+//Specifying 0 will cause postit to display every time page is loaded
+var once_per_browser=0
+
+///No need to edit beyond here///
+
+var ns4=document.layers
+var ie4=document.all
+var ns6=document.getElementById&&!document.all
+
+if (ns4)
+crossobj=document.layers.postit
+else if (ie4||ns6)
+crossobj=ns6? document.getElementById("postit") : document.all.postit
+
+
+function closeit(){
+if (ie4||ns6)
+crossobj.style.visibility="hidden"
+else if (ns4)
+crossobj.visibility="hide"
+}
+
+function get_cookie(Name) {
+  var search = Name + "="
+  var returnvalue = "";
+  if (document.cookie.length > 0) {
+    offset = document.cookie.indexOf(search)
+    if (offset != -1) { // if cookie exists
+      offset += search.length
+      // set index of beginning of value
+      end = document.cookie.indexOf(";", offset);
+      // set index of end of cookie value
+      if (end == -1)
+         end = document.cookie.length;
+      returnvalue=unescape(document.cookie.substring(offset, end))
+      }
+   }
+  return returnvalue;
+}
+
+function showornot(){
+if (get_cookie('postdisplay')==''){
+showit()
+document.cookie="postdisplay=yes"
+}
+}
+
+function showit(){
+if (ie4||ns6)
+crossobj.style.visibility="visible"
+else if (ns4)
+crossobj.visibility="show"
+}
+
+if (once_per_browser)
+showornot()
+else
+showit()
+
+</script>
+
+<script language="JavaScript1.2">
+
+//drag drop function for ie4+ and NS6////
+/////////////////////////////////
+
+function drag_drop(e){
+if (ie4&&dragapproved){
+crossobj.style.left=tempx+event.clientX-offsetx+'px'
+crossobj.style.top=tempy+event.clientY-offsety+'px'
+return false
+}
+else if (ns6&&dragapproved){
+crossobj.style.left=tempx+e.clientX-offsetx+'px'
+crossobj.style.top=tempy+e.clientY-offsety+'px'
+return false
+}
+}
+
+function initializedrag(e){
+if (ie4&&event.srcElement.id=="postit"||ns6&&e.target.id=="postit"){
+offsetx=ie4? event.clientX : e.clientX
+offsety=ie4? event.clientY : e.clientY
+
+tempx=parseInt(crossobj.style.left)
+tempy=parseInt(crossobj.style.top)
+
+dragapproved=true
+document.onmousemove=drag_drop
+}
+}
+document.onmousedown=initializedrag
+document.onmouseup=new Function("dragapproved=false")
+
+</script>
+<!-- End Homepage Only Scripts -->
+<div class="wrapper col0">
+  <div id="topbar">
+    <div id="slidepanel">
+     <div class="topbox">
+        <h2>Important Information</h2>
+        <br />
+<b>Warning</b>:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/jbic/public_html/infrastructure.php:54) in <b>/home/jbic/public_html/infrastructure.php</b> on line <b>178</b><br />
+<br />
+<b>Warning</b>:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/jbic/public_html/infrastructure.php:54) in <b>/home/jbic/public_html/infrastructure.php</b> on line <b>178</b><br />
+        
+      </div>
+           <div class="topbox last" style="float:right">
+        <h2>Admin Login Here</h2>
+        <form action="logincode.php" method="post">
+          <fieldset>
+            <legend>Admin Login Form</legend>
+            <label for="pupilname">Username:
+              <input type="text" name="userid" id="userid" value="" />
+            </label>
+            <label for="pupilpass">Password:
+              <input type="password" name="userpass" id="userpass" value="" />
+            </label>
+            <label for="pupilremember">
+              <input class="checkbox" type="checkbox" name="pupilremember" id="pupilremember" checked="checked" />
+              Remember me</label>
+            <p>
+              <input type="submit" name="pupillogin" id="pupillogin" value="Login" />
+              &nbsp;
+              <input type="reset" name="pupilreset" id="pupilreset" value="Reset" />
+            </p>
+          </fieldset>
+        </form>
+      </div>
+      <br class="clear" />
+    </div>
+    <div id="loginpanel">
+      <ul>
+        <li class="left">Log In Here &raquo;</li>
+        <li class="right" id="toggle"><a id="slideit" href="#slidepanel">Administration</a><a id="closeit" style="display:none;" href="#slidepanel">Close Panel</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1 align="center" class="style6"><a href="index.html" class="style3 style9 style23"><span class="style31">JAI BAJRANG</span> <span class="style31">INTERMEDIATE COLLEGE</span></a></h1>
+      <p align="center" class="style12">RAMNAGAR-AMBEDKAR NAGAR</p>
+    </div>
+    <div id="topnav">
+      <ul>
+        <li><a href="best-college.php">Home</a></li>
+        <li><a href="aboutus.php">About_Us</a></li>
+        <li><a href="gallery.php">Gallery</a></li>
+        <li class="active"><a href="infrastructure.php">Infrastructure</a></li>
+        <li><a href="feedback.php">Feedback</a></li>
+        <li><a href="notice.php">Notice</a></li>
+        <li class="last"><a href="download.php">Download</a></li>
+        <li class="last"><a href="contactus.php">&nbsp; Contact Us</a></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <br class="clear" />
+</div>
+</div>
+
+<div align="center">
+  <!-- ####################################################################################################### -->
+  </div>
+<div id="container">
+<div>
+  <h2 style="background-color:#F8F7DF">
+    <p class="style61 style18"><span class="style64">You Are Here</span> <span class="style64">»</span> <a href="index.php"><font color="#746550">Home </a><span class="style64">»</span> <u><a href="infrastructure.php"><font color="#746550">Infrastructure </a></u></p>
+  </h2></div>
+   <div id="footer" style="background:#F8F7DF"><img class="imgr" src="infrastructure/building.jpg" alt="" width="225" height="110" />
+<h2 class="style25" style="background-color:#F8F7DF "><font color="#333333">BUILDING </h2>
+<ul>
+          <li><font color="#000000"><span class="style8">We have a grand,clean and well decorated Building. We are giving the proper atmosphere. The rooms are big and airy.</span></li>
+          <li class="style8"></li>
+    </ul>  
+      
+	<p class="style8">&nbsp;</p>
+	<p>&nbsp;</p>
+	<p><img class="imgr" src="infrastructure/lab image.gif" alt="" width="225" height="110" />	</p>
+	<h2 class="style25" style="background-color:#F8F7DF"><font color="#333333">LAB</h2>
+<ul>
+          <li><font color="#000000"><span class="style8">We have four well equipped Lab-Computer,Physics,Chemistry and Biology. All the Lab are rich with proper tools and apparatus. 60 students can do experiments at the time .</span></li>
+        <li></li>
+	  </ul>    
+	  
+	  <ul>
+	    <li></li>
+	    <li></li>
+      </ul>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+	  <p><img class="imgr" src="infrastructure/P1090224.JPG" alt="" width="225" height="110" />	  </p>
+	  <h2 class="style25" style="background-color:#F8F7DF"><font color="#333333">SEMINAR HALL</h2>
+<ul>
+          <li><font color="#000000"><span class="style8">We have a big and good Seminar Hall in which we celebrate our other activities as debates,discussion and other copetitions. The hall is equipped with LCD Projectors, Sounds system etc. Smart classes are also arranged with LCD Projectors.</span></li>
+      </ul>  
+	 
+	 <p>&nbsp;</p>
+	 <p>&nbsp;</p>
+	 <p><img class="imgr" src="infrastructure/P1090188.JPG" alt="" width="225" height="110" />	  </p>
+	 <h2 class="style25" style="background-color:#F8F7DF"><font color="#333333">LIBRARY</h2>
+    <ul>
+      <li><font color="#000000"><span class="style8">There are a rich Library in our College. It is full of sufficient books and magazines.</span></li>
+      </ul>  	
+	  
+       <p class="style8">&nbsp;</p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+       <img class="imgr" src="infrastructure/P1090178.JPG" alt="" width="225" height="110" />
+	  </p>
+      <h2 class="style28" style="background-color:#F8F7DF"><font color="#333333">GROUND</h2>
+<ul>
+          <li><font color="#000000"><span class="style8">College Campus is full of greenery. It has an attractive surroundings with flowers and green plants.</span></li>      
+      </ul> 
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p><img class="imgr" src="infrastructure/P1090232.JPG" alt="" width="225" height="110" />          </p>
+        </p>
+      <h2 class="style29" style="background-color:#F8F7DF"><font color="#333333">C.C TV.</h2>
+<ul>
+        <li><font color="#000000"><span class="style8">College Campus is full of wi-fi there are CCTV Cameras in smart classes and every where in the college.</span></li>      
+      </ul>   
+       <p class="style8">&nbsp;</p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+       <img class="imgr" src="infrastructure/2.JPG" alt="" width="225" height="110" />
+	  </p>
+      <h2 class="style25" style="background-color:#F8F7DF"><font color="#333333">GENERATOR</h2>
+<ul>
+          <li><font color="#000000"><span class="style8">We have a high power big Generator to supply the power in all the class room lab etc .</span></li>      
+      </ul>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+  </div>
+  <p>&nbsp;</p>
+</div>
+<div class="clear"></div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<!-- ####################################################################################################### -->
+  </div>
+  <div class="wrapper col5">
+  <div id="copyright">
+    <p class="fl_left">JBIC &copy; 2016 - All Rights Reserved</p>
+    <p class="fl_right">Designed & Developed by <b><font color="#FFFF00">Abhishek Kumar.  Mobile No:9795275143</font></b></p>
+    <br class="clear" />
+</div>
+</div>
+</body>
+</html>

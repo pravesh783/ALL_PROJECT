@@ -1,0 +1,19 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background-color: rgb(200,30,100);
+}
+#a{
+	height: 400px;
+	width: 500px;
+	margin-left: 500px;
+	margin-top: 100px;
+background-color: grey;
+font-size: 2em;
+text-align: center;
+}
+a :hover{
+	color: red;
+}

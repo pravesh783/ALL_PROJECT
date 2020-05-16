@@ -1,0 +1,23 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+#a{margin-top: 100px;
+	height: 500px;
+	width: 400px;
+	border-style: dotted;
+	margin-left: 500px;
+	background-color: grey;
+	}
+	#b{
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+	h1{
+		color: red;
+	}
+	
+
+	input{
+
+	}

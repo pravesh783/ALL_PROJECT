@@ -1,0 +1,31 @@
+*{
+	margin: 0px;
+	padding:0px;
+}
+
+#a{
+height: 245px;
+width: 100%;
+background:linear-gradient(red,yellow); 
+}
+#b{
+height: 230px;
+width: 100%;
+background-color: white;
+}
+#c{
+height: 248px;
+width: 100%;
+background-color:green; 
+}
+#b h1{
+	font-size: 4em;
+	text-align: center;
+	color: blue;
+	font-style:serif
+}
+#e{
+	height: 50px;
+	width: 50px;
+	border-color:black;
+}

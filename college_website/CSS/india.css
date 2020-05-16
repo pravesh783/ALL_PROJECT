@@ -1,0 +1,59 @@
+*{
+	margin: 0px;
+	padding: 0px;
+
+}
+body{
+background: linear-gradient(red,blue,green,brown,pink);
+
+}
+#a{
+height: 320px;
+width:44%;
+background-color:skyblue;
+color: red;
+margin-left: 350px;
+margin-top: 180px;
+opacity: .9;
+
+}
+#a h1{
+	text-align: center;
+	font-size: 3.5em;
+}
+#b{
+	background-color: blue;
+	height: 200px;
+	width: 200px;
+	color: white;
+}
+#c{
+	background-color: pink;
+	height: 200px;
+	width: 200px;
+	margin-left: 200px;
+margin-top: -200px;
+color: green;
+}
+#d{
+	background-color: magenta;
+	height: 200px;
+	width: 200px;
+	margin-left: 400px;
+margin-top: -200px;
+color: white;
+}
+button{
+	font-size: 2em;
+	color: white;
+	margin-left: 50px;
+	margin-top: 30px;
+	background-color: green;
+	border-radius: 20px;
+	border-color: red;
+	opacity: .8;
+	border-style: dashed;
+}
+button:hover{
+	color: red;
+}

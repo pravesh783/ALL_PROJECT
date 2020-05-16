@@ -1,0 +1,56 @@
+<?php
+include("signup.php");
+error_reporting(0);
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="signup.css">
+</head>
+<body><form action="sign1.php" method="GET">
+	<div id="a">
+		<h1>Please fill your Details:-</h1>
+		<div id="b">
+		Name:<input type="text" name="name"><br>
+		Father's Name:<input type="text" name="Father Name"><br>
+		Mother's Name:<input type="text" name="Mother Name"><br>
+		Course:<input type="text" name="Course"><br>
+		Branch:<input type="text" name="Branch"><br>
+		Registration no:<input type="text" name="Registration no"><br>
+		Village:<input type="text" name="Village"><br>
+		Post:<input type="text" name="Post"><br>
+		District:<input type="text" name="District"><br>
+		PIN:<input type="text" name="PIN"><br>
+		Email:<input type="text" name="Email"><br>
+		Mobile No:<input type="text" name="Mobile No"><br>
+		Father's No:<input type="text" name="Father No"><br>
+		Roll No:<input type="text" name="Roll No"><br>
+		<input type="submit" name="submit" style="color: blue;margin: 30px;font-weight: bold;font-size: 1.5em;margin-left:80px;">
+
+</div>
+	</div>
+</form>
+
+$n=$_GET['Name'];
+$fn=$_GET['Father Name'];
+$mn=$_GET['Mother Name'];
+$c=$_GET['Course'];
+$b=$_GET['Branch'];
+$rn=$_GET['Registration no'];
+$v=$_GET['Village'];
+$p=$_GET['Post'];
+$d=$_GET['District'];
+$pn=$_GET['PIN'];
+$e=$_GET['Email'];
+$m=$_GET['Mobile No'];
+$f=$_GET['Father No'];
+$r=$_GET['Roll No'];
+$query="INSERT INTO SIGN VALUES('$n','$fn','$mn','$c','$b','$rn','$v','p','$d','$pn','$e','$m','$f','$r')";
+$data=mysqli_query($conn,$query);
+if ($data) {
+	echo "Data inserted into database";
+}
+?>
+</body>
+</html>

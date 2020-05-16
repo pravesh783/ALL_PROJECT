@@ -1,0 +1,66 @@
+#menu{
+	height: 100px;
+	width: 75%;
+	border:3px solid blue;
+	border-radius: 50px;
+	margin: 150px;
+}
+#ab h1{
+	height: 40px;
+	width: 99%;
+	background-color: yellow;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 15px;
+	border-style: dotted;
+	margin-left: 3px;
+}
+#mid{height: 40px;
+	width: 100%;
+	background-color: lightgreen;
+color: brown;
+line-height: 40px;
+}
+#mid ul li{
+	list-style-type: none;
+	font-size: 1.5em;
+} 
+#mid a{
+	text-decoration: none;
+	float: left;
+	margin-left: 130px;
+	color: brown;
+}
+#a{height: 40px;
+	width: 100%;
+	background-color: yellow;
+	text-align: center;
+	line-height: 30px;
+    color: blue;
+    line-height: 40px;
+}
+td{
+	margin: 50px;
+font-size: 2em;
+}
+#b {	background-color: yellow;
+height: 40px;
+width: 100%;
+}
+//.but{
+	margin-left: 200px;
+	background-color: red;
+	color: yellow;
+}
+td a{
+	color: red;
+}
+tr{
+background-color: orange;
+}
+h2 a{
+	color: white;
+font-size: 2em;
+}
+h2 a:hover{
+color: red;
