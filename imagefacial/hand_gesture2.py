@@ -20,7 +20,7 @@ while capture.isOpened():
     hsv=cv2.cvtColor(blur,cv2.COLOR_BGR2HSV)
     mask2=cv2.inRange(hsv,np.array([2,0,0]),np.array([20,255,255]))
     
-    kernel=np.ones((5,5))
+    kernel=np.ones((5,5),np.uint8)
     
     dilation=cv2.dilate(mask2,kernel,iterations=1)
     erosion=cv2.erode(dilation,kernel,iterations=1)
